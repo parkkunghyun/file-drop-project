@@ -53,7 +53,7 @@ const Header = () => {
           <div className="flex items-center gap-4">
           {user ? (
               <div className="flex items-center gap-4">
-                <span className="font-medium text-gray-800 dark:text-gray-100">
+                <span className="hidden font-medium text-gray-800 md:block dark:text-gray-100">
                   {user.email.split("@")[0]}님 반갑습니다.
                 </span>
                 <button

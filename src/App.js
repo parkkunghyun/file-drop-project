@@ -7,6 +7,7 @@ import Header from './components/Header';
 import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { darkModeState } from './atoms/darkAtom';
+import Footer from './components/Footer';
 
 function App() {
   const [darkMode, setDarkMode] = useRecoilState(darkModeState);
@@ -32,12 +33,13 @@ useEffect(() => {
 
 
   return (
-    <div className='w-full h-screen dark:text-white dark:bg-gray-900'>
+    <div className='w-full min-h-screen dark:text-white dark:bg-gray-900'>
       <Header />
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/dashboard' element={<Dashboard/>} />
       </Routes>
+      <Footer/>
     </div>
   );
 }

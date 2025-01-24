@@ -67,11 +67,13 @@ const Main = () => {
                     </video>
               </div>
             </div>
-            <p className="pt-5 text-xl font-bold text-center">Developer: Park Kyung Hyun</p>
-            <p className="p-2 font-light text-center">
-            구글 드라이브와 같은 직관적인 파일 저장 시스템에서 영감을 받아, 개인화된 파이어베이스 기반의 드라이브를 개발하였습니다. <br />
-            이 시스템은 사용자가 언제 어디서나 편리하게 파일을 저장하고 관리할 수 있도록 도와줍니다.
-            </p>
+            <div className='hidden  lg:block bottom-5'>
+                <p className="pt-5 text-xl font-bold text-center">Developer: Park Kyung Hyun</p>
+                <p className="p-2 font-light text-center">
+                구글 드라이브와 같은 직관적인 파일 저장 시스템에서 영감을 받아, 개인화된 파이어베이스 기반의 드라이브를 개발하였습니다. <br />
+                이 시스템은 사용자가 언제 어디서나 편리하게 파일을 저장하고 관리할 수 있도록 도와줍니다.
+                </p>
+            </div>
             <ToastContainer />
         </main>
     )
