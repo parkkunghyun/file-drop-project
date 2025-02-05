@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Drop In File
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+구글 드라이브와 같은 직관적인 파일 저장 시스템에서 영감을 받아, Firebase를 기반으로 개인화된 파일 관리 시스템을 개발했습니다.
 
-## Available Scripts
+**Link:** [Drop In File](https://fir-skilup.web.app/)
 
-In the project directory, you can run:
+## 프로젝트 설명
+이 프로젝트는 사용자가 언제 어디서나 편리하게 파일을 저장하고 관리할 수 있도록 설계되었습니다. 실시간 데이터 관리, 직관적인 UI/UX, 그리고 최적화된 성능을 통해 사용자 경험을 극대화하였습니다.
 
-### `npm start`
+## 주요 기능 및 특징
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 🔐 **인증 및 보안**
+- **Firebase Authentication**을 활용하여 Google 계정을 통한 간편한 로그인 및 인증 기능 구현
+- `onAuthStateChanged`를 사용하여 로그인된 사용자만 파일에 접근하고 관리할 수 있도록 설정
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🌙 **다크 모드 지원**
+- **Recoil의 atom**을 사용해 다크모드 상태를 전역적으로 관리하며, 컴포넌트 간 상태 공유를 간소화
+- 애플리케이션 초기 로드 시 `useEffect`를 통해 `localStorage`에서 저장된 다크모드 상태를 불러와 Recoil 상태에 반영
+- 상태 변경 시 `localStorage`와 동기화하여 지속적인 사용자 설정 유지
 
-### `npm test`
+### 📦 **실시간 파일 관리**
+- **Firebase Firestore**와 `react-firebase-hooks/firestore`의 `useCollection`을 사용하여 실시간 파일 데이터 관리
+- 파일 업로드 및 삭제 시 변경 사항이 즉시 반영되어 최신 데이터를 자동으로 확인 가능
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 📥 **직관적인 파일 업로드**
+- **React Dropzone**을 사용해 직관적인 파일 드래그 앤 드롭 기능 구현
+- `pretty-bytes`로 파일 크기를 직관적으로 표시하고, `react-file-icon`으로 파일 형식에 맞는 아이콘 렌더링
 
-### `npm run build`
+### ⚡ **성능 최적화**
+- **서버 정렬:** Firebase Firestore의 `orderBy`를 사용하여 서버에서 데이터를 정렬
+- **클라이언트 최적화:** `useMemo`를 활용해 정렬된 데이터를 효율적으로 관리하고 불필요한 연산 제거
+- `useMemo`와 `useCallback`으로 데이터 연산과 이벤트 핸들러를 최적화하여 렌더링 성능 향상
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🚀 **배포 및 호스팅**
+- **Firebase Hosting**을 사용하여 안정적이고 빠른 성능 제공
+- 글로벌 사용자에게 빠른 로드 속도와 높은 신뢰성 보장
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## ⚙️ 기술 스택
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Frontend
+- **React**
+- **Recoil** (상태 관리)
+- **React Dropzone** (파일 드래그 앤 드롭 기능)
+- **React Toastify** (실시간 알림)
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Backend
+- **Firebase Firestore** (실시간 데이터베이스)
+- **Firebase Authentication** (사용자 인증 및 보안)
 
 ### Deployment
+- **Firebase Hosting** (안정적인 배포 및 빠른 로딩 속도 제공)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+더 나은 사용자 경험을 위해 최적화된 개인화된 파일 관리 시스템, **Drop In File**을 지금 경험해보세요!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
